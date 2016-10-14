@@ -32,7 +32,7 @@ module Refinery
       end
 
       def from_mail
-        "#{Refinery::Inquiries.from_name}@#{@request.domain}"
+        ENV['SMTP_USERNAME'] || "#{Refinery::Inquiries.from_name}@#{@request.domain}"
       end
     end
   end
